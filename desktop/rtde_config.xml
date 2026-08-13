@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<rtde_config>
+    <recipe key="state">
+        <field name="actual_digital_output_bits" type="UINT64"/>
+    </recipe>
+    <recipe key="setp">
+        <field name="input_bit_register_64" type="BOOL"/>
+        <field name="input_bit_register_65" type="BOOL"/>
+        <field name="input_bit_register_66" type="BOOL"/>
+        <field name="input_bit_register_67" type="BOOL"/>
+        <field name="input_bit_register_68" type="BOOL"/>
+        <field name="input_bit_register_69" type="BOOL"/>
+        <field name="input_bit_register_70" type="BOOL"/>
+        <field name="input_bit_register_71" type="BOOL"/>
+        <field name="input_bit_register_72" type="BOOL"/>
+        <field name="input_bit_register_73" type="BOOL"/>
+        <field name="input_bit_register_74" type="BOOL"/>
+        <field name="input_bit_register_75" type="BOOL"/>
+        <field name="input_bit_register_76" type="BOOL"/>
+    </recipe>
+</rtde_config>

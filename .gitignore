@@ -1,0 +1,7 @@
+.env
+.vagrant
+build
+log
+install
+*.log
+*.pyc

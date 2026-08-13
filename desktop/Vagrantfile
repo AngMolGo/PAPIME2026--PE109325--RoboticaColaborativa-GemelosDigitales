@@ -1,0 +1,59 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+require 'json'
+
+# Parsear el archivo de configuración
+config_file = File.join(__dir__, 'config.json')
+if File.exist?(config_file)
+  config_json = JSON.parse(File.read(config_file))
+else
+  abort("Error: No se encontró el archivo config.json")
+end
+
+Vagrant.configure("2") do |config|
+  # Box genérica de Ubuntu
+  config.vm.box = config_json["Vagrant"]["Box"] || "generic/ubuntu2204"
+
+  # Configuración de SSH por defecto
+  config.ssh.username = "vagrant"
+  config.ssh.password = "vagrant"
+  config.ssh.insert_key = false
+
+  # Configuración del proveedor Hyper-V
+  config.vm.provider "hyperv" do |hv|
+    hv.cpus = config_json["VM"]["CPUs"] || 2
+    hv.memory = config_json["VM"]["Memory"] || 4096
+    hv.maxmemory = config_json["VM"]["Memory"] || 4096
+    hv.mac = config_json["Network"]["MAC"]
+  
+  # Carpeta puente para transferir archivos
+  config.vm.synced_folder config_json["SyncFolder"]["HostPath"], config_json["SyncFolder"]["GuestPath"],
+    owner: "vagrant",
+    group: "vagrant",
+    mount_options: ["dir_mode=0775", "file_mode=0664"],
+    smb_username: "vagrant",
+    smb_password: "vagrant"
+
+  end
+
+  # Deshabilitar la carpeta sincronizada por defecto
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+
+  # Configurar red pública (Bridge) con IP estática en el Switch
+  config.vm.network "public_network", 
+    bridge: config_json["Network"]["Bridge"], 
+    ip: config_json["Network"]["IP"], 
+    mac: config_json["Network"]["MAC"]
+
+  # Copiar los directorios necesarios usando el aprovisionador de archivos (vía SSH/SCP)
+  config.vm.provision "file", source: "ansible", destination: "/home/vagrant/ansible"
+  config.vm.provision "file", source: "src", destination: "/home/vagrant/src"
+
+  # Aprovisionamiento local con Ansible (se ejecuta dentro de la VM usando los archivos copiados)
+  config.vm.provision "ansible_local" do |ansible|
+    ansible.provisioning_path = "/home/vagrant/ansible"
+    ansible.playbook = "playbook.yml"
+    ansible.install = true
+  end
+end

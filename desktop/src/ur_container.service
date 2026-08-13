@@ -1,0 +1,20 @@
+[Unit]
+Description=Servicio Docker Compose para mi app
+Requires=docker.service
+After=docker.service
+
+[Service]
+# Cambiado a exec para rastrear el proceso principal correctamente
+Type=exec
+WorkingDirectory=/opt/ur_container
+
+# Comandos de ejecución (eliminamos el -d para que systemd controle el proceso en primer plano)
+ExecStart=/usr/bin/docker compose up
+ExecStop=/usr/bin/docker compose down
+
+# Políticas de reinicio automático
+Restart=always
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,18 @@
+{
+  "Network": {
+    "IP": "192.168.0.106",
+    "MAC": "502E9159E1AF",
+    "Bridge": "RedPuente"
+  },
+  "VM": {
+    "CPUs": 2,
+    "Memory": 4096
+  },
+  "SyncFolder": {
+    "HostPath": "C:\\Users\\angel\\Desktop\\UR_ws",
+    "GuestPath": "/opt/datos_usb"
+  },
+  "Vagrant": {
+    "Box": "generic/ubuntu2204"
+  }
+}

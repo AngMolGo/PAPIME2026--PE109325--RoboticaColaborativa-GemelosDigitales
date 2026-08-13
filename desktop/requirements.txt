@@ -1,0 +1,2 @@
+PyQt6
+git+https://github.com/UniversalRobots/RTDE_Python_Client_Library.git

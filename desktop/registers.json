@@ -1,0 +1,33 @@
+{
+  "inputs": {
+    "btn_green": false,
+    "btn_red": false,
+    "btn_blue": false,
+    "estop": false,
+    "switch": false,
+    "DI0": true,
+    "DI1": false,
+    "DI2": false,
+    "DI3": true,
+    "DI4": false,
+    "DI5": false,
+    "DI6": false,
+    "DI7": false
+  },
+  "outputs": {
+    "tower_red": false,
+    "tower_yellow": false,
+    "tower_green": false,
+    "out_btn_green": true,
+    "out_btn_red": false,
+    "out_btn_blue": false,
+    "DO0": false,
+    "DO1": false,
+    "DO2": false,
+    "DO3": false,
+    "DO4": false,
+    "DO5": false,
+    "DO6": false,
+    "DO7": true
+  }
+}
