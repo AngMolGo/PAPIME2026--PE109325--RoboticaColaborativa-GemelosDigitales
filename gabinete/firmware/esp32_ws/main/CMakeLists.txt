@@ -1,0 +1,1 @@
+idf_component_register(SRCS main.c esp32_serial_transport.c gpio_config.c micro_ros_task.c gpio_manager_task.c INCLUDE_DIRS "include")

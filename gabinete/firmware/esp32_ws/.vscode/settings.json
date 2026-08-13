@@ -1,0 +1,20 @@
+{
+    "idf.pythonInstallPath": "/usr/bin/python3",
+    "files.associations": {
+        "gpio_config.h": "c",
+        "gpio.h": "c",
+        "esp_err.h": "c",
+        "esp_log.h": "c",
+        "freertos.h": "c",
+        "inputs.h": "c",
+        "error_handling.h": "c",
+        "outputs.h": "c",
+        "micro_ros_task.h": "c",
+        "uart.h": "c",
+        "outputs__struct.h": "c",
+        "gpio_manager_task.h": "c",
+        "task.h": "c",
+        "string.h": "c"
+    },
+    "idf.flashType": "UART"
+}
