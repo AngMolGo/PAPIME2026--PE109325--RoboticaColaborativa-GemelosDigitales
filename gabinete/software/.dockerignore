@@ -1,0 +1,7 @@
+# 1. Ignorar absolutamente TODO (carpetas, archivos, binarios, archivos ocultos)
+*
+
+# 2. Salvar (dejar pasar) las únicas 2 cosas que necesitas para el COPY
+src/
+!dependencies.repo
+!src/pkg_pe26_*

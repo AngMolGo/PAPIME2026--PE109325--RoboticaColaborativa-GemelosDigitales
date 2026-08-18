@@ -1,0 +1,10 @@
+# compose.dev.yaml
+services:
+  app_pe115326:
+    build:
+      target: builder  # El freno de mano
+      
+    command: sleep infinity  # Para que no se apague
+    
+    volumes:
+      - .:/root/ros2_ws  # El Bind Mount de tu código

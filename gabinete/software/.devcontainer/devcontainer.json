@@ -1,0 +1,25 @@
+{
+  "name": "devc_pe115326",
+  "dockerComposeFile": [
+    "../compose.yaml",       // Tu archivo maestro
+    "./compose.dev.yaml"    // El parche para desarrollo
+  ],
+  "service": "app_pe115326",
+  "workspaceFolder": "/root/ros2_ws",
+  "runServices": ["app_pe115326"],
+  "shutdownAction": "stopCompose",
+  "postCreateCommand": "bash /root/.setup_scripts/postcreate.bash",
+  "overrideCommand": true,
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "idf.gitPath": "/usr/bin/git"
+      },
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-python.python"
+      ]
+    }
+  }
+}

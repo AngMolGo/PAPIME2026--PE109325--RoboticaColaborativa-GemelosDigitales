@@ -1,0 +1,28 @@
+# # # # # # # # # # # # #   COMPOSE FILE   # # # # # # # # # # # #
+services:
+
+  # # # # # # # # #   DEVCONTAINER   # # # # # # # # #
+  pe115326_app:
+    build:
+      context: .         
+      dockerfile: Dockerfile 
+
+    container_name: pe115326_app
+    network_mode: host
+    privileged: true # Mantenemos esto para que /dev funcione bien con tus USBs
+
+    # Aquí van todas las variables mágicas para OpenGL y NVIDIA
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+
+    volumes:
+      - /dev:/dev
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - /var/run/docker.sock:/var/run/docker.sock  # Clave para DooD
+
+    command: ["/bin/bash", "-il"]
+    tty: true
+    stdin_open: true
+
+  # ----------------------------------------------------------------

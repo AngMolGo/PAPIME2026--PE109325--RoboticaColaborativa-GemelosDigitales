@@ -1,0 +1,7 @@
+build
+log
+install
+src/*
+
+# Excepto el paquete de lanzamiento del sistema
+!src/pkg_pe26_*

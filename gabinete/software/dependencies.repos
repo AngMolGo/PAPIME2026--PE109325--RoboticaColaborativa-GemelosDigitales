@@ -1,0 +1,11 @@
+repositories:
+  pkg_ur_controller:
+    type: git
+    url: git@github.com:AngMolGo/pkg_ur_controller.git
+    version: humble
+
+  micro_ros_agent:
+    type: git
+    url: https://github.com/micro-ROS/micro-ROS-Agent.git
+    version: humble
+  

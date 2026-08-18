@@ -1,0 +1,20 @@
+repositories:
+  interbotix/interbotix_ros_core:
+    type: git
+    url: https://github.com/Interbotix/interbotix_ros_core.git
+    version: humble
+
+  interbotix/interbotix_ros_manipulators:
+    type: git
+    url: https://github.com/Interbotix/interbotix_ros_manipulators.git
+    version: humble
+
+  interbotix/interbotix_ros_toolboxes:
+    type: git
+    url: https://github.com/Interbotix/interbotix_ros_toolboxes.git
+    version: humble
+
+  moveit_visual_tools:
+    type: git
+    url: https://github.com/ros-planning/moveit_visual_tools.git
+    version: ros2
