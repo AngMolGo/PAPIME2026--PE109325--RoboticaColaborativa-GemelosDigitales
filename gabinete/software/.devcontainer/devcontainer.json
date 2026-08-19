@@ -4,9 +4,9 @@
     "../compose.yaml",       // Tu archivo maestro
     "./compose.dev.yaml"    // El parche para desarrollo
   ],
-  "service": "app_pe115326",
+  "service": "pe115326_app",
   "workspaceFolder": "/root/ros2_ws",
-  "runServices": ["app_pe115326"],
+  "runServices": ["pe115326_app"],
   "shutdownAction": "stopCompose",
   "postCreateCommand": "bash /root/.setup_scripts/postcreate.bash",
   "overrideCommand": true,

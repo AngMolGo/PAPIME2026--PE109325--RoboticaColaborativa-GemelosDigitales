@@ -25,8 +25,11 @@ RUN apt-get update && apt-get install -yq \
     build-essential \
     software-properties-common \
     # Instalación de package oficial de UR para ROS2.
-    ros-humble-ur \ 
+    ros-humble-ur \
+    && curl -fsSL https://get.docker.com | sh \
     && rm -rf /var/lib/apt/lists/*
+
+
 
 WORKDIR /ros2_ws
 COPY . /ros2_ws/

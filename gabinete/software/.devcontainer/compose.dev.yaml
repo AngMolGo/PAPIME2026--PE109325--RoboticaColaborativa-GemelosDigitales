@@ -1,6 +1,6 @@
 # compose.dev.yaml
 services:
-  app_pe115326:
+  pe115326_app:
     build:
       target: builder  # El freno de mano
       
